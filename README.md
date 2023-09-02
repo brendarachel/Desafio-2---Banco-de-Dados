@@ -5,4 +5,5 @@
 ## No repositório encontram-se os seguintes arquivos:
 
 ### 1. db.exercicio: Banco de dados criado no DBeaver.
-### 2. exercicio.py: Arquivo Python conectado ao Banco de Dados, onde a tabela foi criada e demais alterações e consultas foram realizadas.
+### 2. exercicio.py: Arquivo Python conectado ao Banco de Dados, onde a tabela "alunos" foi criada, alterada e consultas foram realizadas.
+### 3. exercicio2.py: Arquivo Python conectado ao Banco de Dados, onde as tabelas "clientes" e "compras" foram criadas, alteradas, integradas e consultas foram realizadas.
