@@ -8,13 +8,13 @@ cursor = exercicio2.cursor()
 #Crie uma tabela chamada "clientes" com os campos: id (chave primária),
 #nome (texto), idade (inteiro) e saldo (float). Insira alguns registros
 #de clientes na tabela.
-#cursor.execute('CREATE TABLE clientes(id INT PRIMARY KEY, nome VARCHAR(100), idade INT, saldo FLOAT)')
+cursor.execute('CREATE TABLE clientes(id INT PRIMARY KEY, nome VARCHAR(100), idade INT, saldo FLOAT)')
 
-#cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES (1, "Brenda", 29, 5000)')
-#cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES (2, "Vitória", 18, 1000)')
-#cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES (3, "Sofia", 19, 500)')
-#cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES (4, "Yago", 31, 4000)')
-#cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES (5, "Yuri", 28, 900)')
+cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES (1, "Brenda", 29, 5000)')
+cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES (2, "Vitória", 18, 1000)')
+cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES (3, "Sofia", 19, 500)')
+cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES (4, "Yago", 31, 4000)')
+cursor.execute('INSERT INTO clientes(id, nome, idade, saldo) VALUES (5, "Yuri", 28, 900)')
 
 
 #6. Consultas e Funções Agregadas
@@ -66,7 +66,7 @@ print()
 #cliente, o produto e o valor de cada compra.
 
 #Criação da tabela
-cursor.execute('CREATE TABLE compras(id INT PRIMARY KEY, cliente_id INT, FOREIGN KEY (cliente_id) REFERENCES clientes(id), produto VARCHAR(250), valor FLOAT')
+cursor.execute('CREATE TABLE compras(id INT PRIMARY KEY, cliente_id INT, produto VARCHAR(250), valor FLOAT, CONSTRAINT fk_clientes FOREIGN KEY (cliente_id) REFERENCES clientes(id))')
 
 #Inserção de dados
 cursor.execute('INSERT INTO compras(id, cliente_id, produto, valor) VALUES (6, 1, "computador", 4000)')
@@ -80,3 +80,7 @@ dados = cursor.execute('SELECT c.nome, co.produto, co.valor FROM clientes c INNE
 print('Nome do Cliente | Produto | Valor da Compra')
 for i in dados:
     print(f'{i[0]} | {i[1]} | R${i[2]:.2f}')
+
+
+exercicio2.commit()
+exercicio2.close
