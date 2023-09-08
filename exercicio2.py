@@ -45,14 +45,14 @@ print()
 
 #7. Atualização e Remoção com condições
 #a) Atualize o saldo de um cliente específico.
-cursor.execute('UPDATE clientes SET saldo="1500" WHERE id="5"')
+cursor.execute('UPDATE clientes SET saldo=1500 WHERE id=5')
 dados = cursor.execute('SELECT * FROM clientes')
 for cliente in dados:
     print(cliente)
 print()
 
 #b) Remova um cliente pelo seu ID.
-cursor.execute('DELETE FROM clientes WHERE id="1"')
+cursor.execute('DELETE FROM clientes WHERE id=1')
 dados = cursor.execute('SELECT * FROM clientes')
 for cliente in dados:
     print(cliente)

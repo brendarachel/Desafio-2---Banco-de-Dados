@@ -44,14 +44,14 @@ print()
 
 #4. Atualização e Remoção
 #a) Atualize a idade de um aluno específico na tabela.
-dados = cursor.execute('UPDATE alunos SET idade="30" WHERE id="4"')
+dados = cursor.execute('UPDATE alunos SET idade=30 WHERE id=4')
 dados = cursor.execute('SELECT * FROM alunos')
 for aluno in dados:
     print(aluno)
 print()
 
 #b) Remova um aluno pelo seu ID.
-dados = cursor.execute('DELETE FROM alunos WHERE id="5"')
+dados = cursor.execute('DELETE FROM alunos WHERE id=5')
 dados = cursor.execute('SELECT * FROM alunos')
 for aluno in dados:
     print(aluno)
